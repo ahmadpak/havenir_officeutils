@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include havenir_officeutils *.css
+recursive-include havenir_officeutils *.csv
+recursive-include havenir_officeutils *.html
+recursive-include havenir_officeutils *.ico
+recursive-include havenir_officeutils *.js
+recursive-include havenir_officeutils *.json
+recursive-include havenir_officeutils *.md
+recursive-include havenir_officeutils *.png
+recursive-include havenir_officeutils *.py
+recursive-include havenir_officeutils *.svg
+recursive-include havenir_officeutils *.txt
+recursive-exclude havenir_officeutils *.pyc

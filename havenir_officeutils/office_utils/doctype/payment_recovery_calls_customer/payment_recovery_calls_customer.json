@@ -1,0 +1,81 @@
+{
+ "_comments": "[{\"comment\": \"<div><br></div>\", \"by\": \"Administrator\", \"name\": \"22195e75fb\"}]",
+ "creation": "2019-09-05 15:04:21.140887",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "section_break_2",
+  "last_amount",
+  "last_date",
+  "no_response",
+  "column_break_6",
+  "balance",
+  "next_due_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "last_amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Last Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_date",
+   "fieldtype": "Date",
+   "label": "Last Date",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "no_response",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "No Response"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "next_due_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Next Due Date",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-09-05 15:05:33.945694",
+ "modified_by": "Administrator",
+ "module": "Office Utils",
+ "name": "Payment Recovery Calls Customer",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
