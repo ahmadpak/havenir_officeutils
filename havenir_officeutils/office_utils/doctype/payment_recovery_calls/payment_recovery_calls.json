@@ -7,14 +7,16 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_1",
+  "posting_date",
   "naming_series",
   "status",
-  "user",
   "column_break_5",
-  "posting_date",
+  "company",
   "section_break_7",
   "call_details",
   "section_break_9",
+  "remarks",
+  "column_break_11",
   "amended_from"
  ],
  "fields": [
@@ -30,20 +32,15 @@
    "read_only": 1
   },
   {
-   "fieldname": "user",
-   "fieldtype": "Link",
-   "label": "User",
-   "options": "User"
-  },
-  {
    "fieldname": "column_break_5",
    "fieldtype": "Column Break"
   },
   {
    "default": "Today",
    "fieldname": "posting_date",
-   "fieldtype": "Datetime",
-   "label": "Posting Date"
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1
   },
   {
    "fieldname": "call_details",
@@ -75,10 +72,27 @@
   {
    "fieldname": "section_break_9",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
   }
  ],
  "is_submittable": 1,
- "modified": "2019-09-05 16:40:04.796133",
+ "modified": "2019-09-06 03:05:03.197635",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Payment Recovery Calls",
@@ -112,7 +126,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1,

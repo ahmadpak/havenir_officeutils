@@ -80,12 +80,27 @@ app_license = "MIT"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
+# 	"": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 #	}
 # }
+
+fixtures = [{
+    'dt': 'Custom Field', 'filters':[
+        'name','in',[
+            'Customer-last_payment_amount',
+            'Customer-last_payment_date'
+        ]
+    ]
+}]
+
+doc_events = {
+    'Payment Entry':{
+        'on_submit': 'havenir_officeutils.utils.payment_entry.update_customer'
+    }
+}
 
 # Scheduled Tasks
 # ---------------

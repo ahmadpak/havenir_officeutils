@@ -6,13 +6,17 @@
  "engine": "InnoDB",
  "field_order": [
   "customer",
-  "section_break_2",
-  "last_amount",
-  "last_date",
+  "column_break_2",
+  "conversation",
   "no_response",
+  "section_break_2",
+  "last_paid_amount",
+  "last_payment_date",
+  "remarks",
   "column_break_6",
   "balance",
-  "next_due_date"
+  "next_due_date",
+  "section_break_11"
  ],
  "fields": [
   {
@@ -29,23 +33,9 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "last_amount",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Last Amount",
-   "read_only": 1
-  },
-  {
-   "fieldname": "last_date",
-   "fieldtype": "Date",
-   "label": "Last Date",
-   "read_only": 1
-  },
-  {
    "default": "0",
    "fieldname": "no_response",
    "fieldtype": "Check",
-   "in_list_view": 1,
    "label": "No Response"
   },
   {
@@ -54,9 +44,10 @@
   },
   {
    "fieldname": "balance",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Balance",
+   "options": "currency",
    "read_only": 1
   },
   {
@@ -65,10 +56,42 @@
    "in_list_view": 1,
    "label": "Next Due Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "conversation",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Conversation"
+  },
+  {
+   "fieldname": "last_paid_amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Last Paid Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "last_payment_date",
+   "fieldtype": "Date",
+   "label": "Last Payment Date",
+   "read_only": 1
   }
  ],
  "istable": 1,
- "modified": "2019-09-05 16:37:26.639404",
+ "modified": "2019-09-06 02:31:13.909527",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Payment Recovery Calls Customer",
