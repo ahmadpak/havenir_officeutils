@@ -89,10 +89,10 @@ app_license = "MIT"
 
 fixtures = [{
     'dt': 'Custom Field', 'filters':[
-        'name','in',[
+        ['name','in',[
             'Customer-last_payment_amount',
             'Customer-last_payment_date'
-        ]
+        ]]
     ]
 }]
 
