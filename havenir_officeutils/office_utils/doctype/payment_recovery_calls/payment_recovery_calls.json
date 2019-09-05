@@ -1,5 +1,5 @@
 {
- "_comments": "[{\"comment\": \"<div><br></div>\", \"by\": \"Administrator\", \"name\": \"eb3953ecfa\"}]",
+ "_comments": "[]",
  "autoname": "naming_series:",
  "creation": "2019-09-05 15:08:59.094012",
  "doctype": "DocType",
@@ -12,7 +12,9 @@
   "user",
   "column_break_5",
   "posting_date",
+  "section_break_7",
   "call_details",
+  "section_break_9",
   "amended_from"
  ],
  "fields": [
@@ -65,16 +67,25 @@
    "label": "Series",
    "options": "OU-CRC-.YYYY.-",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
   }
  ],
  "is_submittable": 1,
- "modified": "2019-09-05 15:09:36.297205",
+ "modified": "2019-09-05 16:40:04.796133",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Payment Recovery Calls",
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -84,6 +95,20 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
