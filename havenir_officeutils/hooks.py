@@ -91,7 +91,13 @@ fixtures = [{
     'dt': 'Custom Field', 'filters':[
         ['name','in',[
             'Customer-last_payment_amount',
-            'Customer-last_payment_date'
+            'Customer-last_payment_date',
+            'Customer-five_stars',
+            'Customer-four_stars',
+            'Customer-three_stars',
+            'Customer-two_stars',
+            'Customer-one_star',
+            'Customer-rating'
         ]]
     ]
 }]

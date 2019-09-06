@@ -7,16 +7,18 @@
  "field_order": [
   "customer",
   "column_break_2",
-  "conversation",
+  "rating",
   "no_response",
   "section_break_2",
   "last_paid_amount",
   "last_payment_date",
-  "remarks",
   "column_break_6",
   "balance",
   "next_due_date",
-  "section_break_11"
+  "section_break_11",
+  "current_rating",
+  "column_break_13",
+  "remarks"
  ],
  "fields": [
   {
@@ -62,12 +64,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "conversation",
-   "fieldtype": "Rating",
-   "in_list_view": 1,
-   "label": "Conversation"
-  },
-  {
    "fieldname": "last_paid_amount",
    "fieldtype": "Float",
    "in_list_view": 1,
@@ -88,10 +84,27 @@
    "fieldtype": "Date",
    "label": "Last Payment Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Rating",
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_rating",
+   "fieldtype": "Float",
+   "label": "Current Rating",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
   }
  ],
  "istable": 1,
- "modified": "2019-09-06 02:31:13.909527",
+ "modified": "2019-09-06 13:55:17.686486",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Payment Recovery Calls Customer",

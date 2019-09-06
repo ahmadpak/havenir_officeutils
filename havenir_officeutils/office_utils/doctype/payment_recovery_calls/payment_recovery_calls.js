@@ -27,6 +27,7 @@ frappe.ui.form.on('Payment Recovery Calls Customer', {
 				callback: function(r){
 					frappe.model.set_value(cdt,cdn,'last_paid_amount',r.message.last_payment_amount);
 					frappe.model.set_value(cdt,cdn,'last_payment_date',r.message.last_payment_date);
+					frappe.model.set_value(cdt,cdn,'current_rating',r.message.rating);
 				}
 			})
 		}
