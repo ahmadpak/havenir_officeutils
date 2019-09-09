@@ -12,6 +12,7 @@ class PaymentRecoveryCalls(Document):
 
 	def on_submit(self):
 		self.update_customer_rating()
+		self.create_event()
 	
 	def update_customer_rating(self):
 		for row in self.call_details:
@@ -36,6 +37,20 @@ class PaymentRecoveryCalls(Document):
 			customer.db_set('rating',average_stars)
 			customer.db_set('next_due_date',row.next_due_date)
 			customer.db_set('time',row.time)
+
+	def create_event(self):
+		for row in self.call_details:
+			new_event = frappe.new_doc('Event')
+			subject = 'Call ' + row.customer
+			datetime = str(row.next_due_date) + ' ' + str(row.time) 
+			new_event.update({
+				'subject': subject,
+				'event_category': 'Call',
+				'color': '#ffc4c4',
+				'starts_on': datetime,
+				'description': row.remarks
+			})
+			new_event.save()
 
 @frappe.whitelist()
 def get_last_paid_amount(customer):
