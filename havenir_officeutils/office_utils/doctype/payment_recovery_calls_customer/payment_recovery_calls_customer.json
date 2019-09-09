@@ -15,6 +15,7 @@
   "column_break_6",
   "balance",
   "next_due_date",
+  "time",
   "section_break_11",
   "current_rating",
   "column_break_13",
@@ -54,7 +55,7 @@
   },
   {
    "fieldname": "next_due_date",
-   "fieldtype": "Datetime",
+   "fieldtype": "Date",
    "in_list_view": 1,
    "label": "Next Due Date",
    "reqd": 1
@@ -101,10 +102,15 @@
   {
    "fieldname": "column_break_13",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
   }
  ],
  "istable": 1,
- "modified": "2019-09-06 13:55:17.686486",
+ "modified": "2019-09-06 16:25:04.716536",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Payment Recovery Calls Customer",

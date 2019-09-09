@@ -34,6 +34,8 @@ class PaymentRecoveryCalls(Document):
 			average_stars = 5*customer.five_stars + 4*customer.four_stars + 3*customer.three_stars + 2*customer.two_stars + 1*customer.one_star
 			average_stars = average_stars/(customer.five_stars+customer.four_stars+customer.three_stars+customer.two_stars+customer.one_star)
 			customer.db_set('rating',average_stars)
+			customer.db_set('next_due_date',row.next_due_date)
+			customer.db_set('time',row.time)
 
 @frappe.whitelist()
 def get_last_paid_amount(customer):
