@@ -99,7 +99,9 @@ fixtures = [{
             'Customer-one_star',
             'Customer-rating',
             'Customer-next_due_date',
-            'Customer-time'
+            'Customer-time',
+            'Customer-section_break_43',
+            'Customer-column_break_43'
         ]]
     ]
 }]
