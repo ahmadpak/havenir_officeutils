@@ -6,9 +6,10 @@ def get_data():
 	return [
 		{
 			"module_name": "Office Utils",
+			"catergory": "Modules",
+			"label": _("Office Utils"),
 			"color": "grey",
 			"icon": "octicon octicon-file-graph",
 			"type": "module",
-			"label": _("Office Utils")
 		}
 	]
