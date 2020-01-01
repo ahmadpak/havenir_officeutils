@@ -37,6 +37,7 @@ class PaymentRecoveryCalls(Document):
 			customer.db_set('rating',average_stars)
 			customer.db_set('next_due_date',row.next_due_date)
 			customer.db_set('time',row.time)
+			customer.db_set('will_pay_with_next_purchase',row.will_pay_with_next_purchase)
 
 	def create_event(self):
 		for row in self.call_details:

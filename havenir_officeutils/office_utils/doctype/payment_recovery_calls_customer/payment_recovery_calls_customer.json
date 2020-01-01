@@ -1,5 +1,5 @@
 {
- "_comments": "[]",
+ "actions": [],
  "creation": "2019-09-05 15:04:21.140887",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -12,6 +12,7 @@
   "section_break_2",
   "last_paid_amount",
   "last_payment_date",
+  "will_pay_with_next_purchase",
   "column_break_6",
   "balance",
   "next_due_date",
@@ -107,10 +108,17 @@
    "fieldname": "time",
    "fieldtype": "Time",
    "label": "Time"
+  },
+  {
+   "default": "0",
+   "fieldname": "will_pay_with_next_purchase",
+   "fieldtype": "Check",
+   "label": "Will Pay With Next Purchase"
   }
  ],
  "istable": 1,
- "modified": "2019-09-06 16:25:04.716536",
+ "links": [],
+ "modified": "2020-01-01 01:27:44.197714",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Payment Recovery Calls Customer",
