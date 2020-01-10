@@ -17,8 +17,15 @@ class SupplierBalanceComparison(Document):
                                                     'supplier': self.supplier
                                                 },
                                                 fields=['name'])
-        if remaining_invoices and self.our_balance == self.their_balance:
-            sup.db_set('balance_matched', 'Matched up last comparison date')
+        remaining_payments = frappe.db.get_list('Payment Entry',
+                                                filters={
+                                                    'posting_date': ['>', self.compared_up_to],
+                                                    'party_type': 'Supplier',
+                                                    'party': self.supplier
+                                                })
+        
+        if (remaining_invoices or remaining_payments) and self.our_balance == self.their_balance:
+            sup.db_set('balance_matched', 'Matched till last comparison date')
         else:
             if self.our_balance == self.their_balance:
                 sup.db_set('balance_matched', 'Matched')

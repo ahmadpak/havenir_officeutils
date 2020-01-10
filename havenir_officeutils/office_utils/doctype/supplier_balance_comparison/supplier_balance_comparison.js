@@ -11,7 +11,6 @@ frappe.ui.form.on("Supplier Balance Comparison", {
 
   compared_up_to: function(frm, cdt, cdn) {
     var doc = cur_frm.doc;
-    console.log(doc.compared_up_to);
     if (!doc.supplier) {
       frappe.throw("Please select Supplier!");
     } else {
@@ -28,6 +27,31 @@ frappe.ui.form.on("Supplier Balance Comparison", {
           //cur_frm.refresh_field('call_details');
         }
       });
+    }
+  },
+  our_balance: function (frm) {
+    var doc = cur_frm.doc;
+    if (doc.their_balance != null || doc.their_balance != ''){
+      if (doc.our_balance==doc.their_balance){
+        doc.balance_status = 'Matched'
+      }
+      else{
+        doc.balance_status = 'Not Matched'
+      }
+      frm.refresh_field('balance_status')
+    }
+  },
+  their_balance: function (frm) {
+    var doc = cur_frm.doc;
+    if (doc.our_balance != null || doc.our_balance != ''){
+      if (doc.our_balance==doc.their_balance){
+        doc.balance_status = 'Matched'
+      }
+      else{
+        doc.balance_status = 'Not Matched'
+      }
+      frm.refresh_field('balance_status')
+      console.log(doc.balance_status)
     }
   }
 });
