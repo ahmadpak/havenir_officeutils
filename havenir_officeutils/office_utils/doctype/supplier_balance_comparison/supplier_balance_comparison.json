@@ -1,5 +1,4 @@
 {
- "actions": [],
  "autoname": "naming_series:",
  "creation": "2019-12-31 11:49:11.963113",
  "doctype": "DocType",
@@ -19,6 +18,7 @@
   "our_balance",
   "their_balance",
   "balance_status",
+  "balance_difference",
   "section_break_13",
   "details",
   "section_break_15",
@@ -85,10 +85,12 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.our_balance!=null",
    "fieldname": "their_balance",
    "fieldtype": "Currency",
    "label": "Their Balance",
-   "options": "Currency"
+   "options": "Currency",
+   "precision": "2"
   },
   {
    "fieldname": "section_break_13",
@@ -131,11 +133,18 @@
    "fieldtype": "Data",
    "label": "Balance Status",
    "read_only": 1
+  },
+  {
+   "fieldname": "balance_difference",
+   "fieldtype": "Currency",
+   "label": "Balance Difference",
+   "options": "Currency",
+   "precision": "2",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
- "links": [],
- "modified": "2020-01-08 17:51:00.856399",
+ "modified": "2020-01-11 17:27:39.536904",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Supplier Balance Comparison",

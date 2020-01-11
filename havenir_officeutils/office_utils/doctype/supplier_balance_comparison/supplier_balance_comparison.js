@@ -23,7 +23,7 @@ frappe.ui.form.on("Supplier Balance Comparison", {
           company: doc.company
         },
         callback: function(r) {
-          frappe.model.set_value(cdt, cdn, "our_balance", r.message);
+          frappe.model.set_value(cdt, cdn, "our_balance", -r.message);
           //cur_frm.refresh_field('call_details');
         }
       });
@@ -51,7 +51,8 @@ frappe.ui.form.on("Supplier Balance Comparison", {
         doc.balance_status = 'Not Matched'
       }
       frm.refresh_field('balance_status')
-      console.log(doc.balance_status)
+      doc.balance_difference = doc.our_balance - doc.their_balance
+      frm.refresh_field('balance_difference')
     }
   }
 });
