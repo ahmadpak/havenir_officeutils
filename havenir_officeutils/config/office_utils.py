@@ -28,5 +28,16 @@ def get_data():
                     "onboard": 1,
                 },
             ]
+        },
+        {
+            "label": ("Reports"),
+            "items": [
+                {
+					"type": "report",
+					"name": "Party Ledger",
+					"doctype": "GL Entry",
+					"is_query_report": True
+				},
+            ]
         }
     ]

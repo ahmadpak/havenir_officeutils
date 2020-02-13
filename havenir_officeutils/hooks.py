@@ -101,7 +101,13 @@ fixtures = [{
             'Customer-next_due_date',
             'Customer-time',
             'Customer-section_break_43',
-            'Customer-column_break_43'
+            'Customer-column_break_43',
+            'Purchase Invoice-reconciled',
+            'Payment Entry-reconciled',
+            'Journal Entry-reconciled',
+            'Payment Entry-reconciled_by',
+            'Journal Entry-reconciled_by',
+            'Purchase Invoice-reconciled_by'
         ]]
     ]
 }]
