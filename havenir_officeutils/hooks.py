@@ -109,7 +109,9 @@ fixtures = [{
             'Journal Entry-reconciled_by',
             'Purchase Invoice-reconciled_by',
             'Sales Invoice-reconciled',
-            'Sales Invoice-reconciled_by'
+            'Sales Invoice-reconciled_by',
+            'Customer-balance_matched',
+            'Customer-last_balance_comparison_date'
         ]]
     ]
 }]
