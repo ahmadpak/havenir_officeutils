@@ -15,6 +15,13 @@ def get_data():
                     "description": _("Calls to customer for payment recovery."),
                     "onboard": 1,
                 },
+                {
+                    "type": "doctype",
+                    "name": "Customer Balance Comparison",
+                    "label": _("Customer Balance Comparison"),
+                    "description": _("Balance comparison with customers."),
+                    "onboard": 1,
+                },
             ]
         },
         {
