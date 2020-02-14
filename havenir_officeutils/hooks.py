@@ -107,7 +107,9 @@ fixtures = [{
             'Journal Entry-reconciled',
             'Payment Entry-reconciled_by',
             'Journal Entry-reconciled_by',
-            'Purchase Invoice-reconciled_by'
+            'Purchase Invoice-reconciled_by',
+            'Sales Invoice-reconciled',
+            'Sales Invoice-reconciled_by'
         ]]
     ]
 }]
