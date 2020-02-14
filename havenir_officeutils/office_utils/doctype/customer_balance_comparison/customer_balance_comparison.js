@@ -21,7 +21,7 @@ frappe.ui.form.on("Customer Balance Comparison", {
         }
       })
       .then(r => {
-        frappe.model.set_value(cdt, cdn, "our_balance", -r.message);
+        frappe.model.set_value(cdt, cdn, "our_balance", r.message);
         frm.trigger("their_balance");
       })
       .then(r => {
