@@ -45,7 +45,8 @@ class CustomerBalanceComparison(Document):
         result = frappe.get_list('GL Entry', filters = {
             'account': ['like', '%Debtors%'],
             'party': self.customer,
-            'docstatus': 1
+            'docstatus': 1,
+            'posting_date': ['between', self.from_date, self.compared_up_to]
         }, fields = [
             'posting_date',
             'debit',
