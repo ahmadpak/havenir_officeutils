@@ -46,7 +46,7 @@ class CustomerBalanceComparison(Document):
             'account': ['like', '%Debtors%'],
             'party': self.customer,
             'docstatus': 1,
-            'posting_date': ['between', self.from_date, 'and', self.compared_up_to],
+            'posting_date': ['>=', self.from_date],
         }, fields = [
             'posting_date',
             'debit',

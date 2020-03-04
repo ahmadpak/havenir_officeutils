@@ -29,7 +29,7 @@ frappe.ui.form.on("Customer Balance Comparison", {
           if (r.message) {
             let result = r.message
             frm.doc.details = null
-            for (var i in result){
+            if (frappe.datetime.get_day_diff(frm.doc.compared_up_to, result[i].posting_date) >=0){
               frm.add_child('details', {
                 date : result[i].posting_date,
                 debit : result[i].debit,

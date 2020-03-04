@@ -30,14 +30,16 @@ frappe.ui.form.on("Supplier Balance Comparison", {
             let result = r.message
             frm.doc.details = null
             for (var i in result){
-              frm.add_child('details', {
-                date : result[i].posting_date,
-                debit : result[i].debit,
-                credit : result[i].credit,
-                document_type : result[i].voucher_type,
-                voucher : result[i].voucher_no,
-                matched : 1
-              })
+              if (frappe.datetime.get_day_diff(frm.doc.compared_up_to, result[i].posting_date) >=0){
+                frm.add_child('details', {
+                  date : result[i].posting_date,
+                  debit : result[i].debit,
+                  credit : result[i].credit,
+                  document_type : result[i].voucher_type,
+                  voucher : result[i].voucher_no,
+                  matched : 1
+                })
+              }
             }
             frm.refresh_field('details')
           }
