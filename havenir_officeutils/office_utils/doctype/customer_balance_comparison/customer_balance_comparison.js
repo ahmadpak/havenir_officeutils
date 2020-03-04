@@ -29,16 +29,17 @@ frappe.ui.form.on("Customer Balance Comparison", {
           if (r.message) {
             let result = r.message
             frm.doc.details = null
-            if (frappe.datetime.get_day_diff(frm.doc.compared_up_to, result[i].posting_date) >=0){
-              console.log(frappe.datetime.get_day_diff(frm.doc.compared_up_to, result[i].posting_date), 'difference')
-              frm.add_child('details', {
-                date : result[i].posting_date,
-                debit : result[i].debit,
-                credit : result[i].credit,
-                document_type : result[i].voucher_type,
-                voucher : result[i].voucher_no,
-                matched : 1
-              })
+            for (var i in result){
+              if (frappe.datetime.get_day_diff(frm.doc.compared_up_to, result[i].posting_date) >=0){
+                frm.add_child('details', {
+                  date : result[i].posting_date,
+                  debit : result[i].debit,
+                  credit : result[i].credit,
+                  document_type : result[i].voucher_type,
+                  voucher : result[i].voucher_no,
+                  matched : 1
+                })
+              }
             }
             frm.refresh_field('details')
           }
