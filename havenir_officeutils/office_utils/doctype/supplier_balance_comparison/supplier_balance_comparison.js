@@ -37,7 +37,8 @@ frappe.ui.form.on("Supplier Balance Comparison", {
                   credit : result[i].credit,
                   document_type : result[i].voucher_type,
                   voucher : result[i].voucher_no,
-                  matched : 1
+                  matched : 0,
+                  differ: 1
                 })
               }
             }
