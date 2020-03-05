@@ -16,8 +16,9 @@
   "document_type",
   "column_break_9",
   "voucher",
+  "remarks",
   "column_break_11",
-  "remarks"
+  "comments"
  ],
  "fields": [
   {
@@ -88,7 +89,6 @@
   {
    "fieldname": "voucher",
    "fieldtype": "Dynamic Link",
-   "in_list_view": 1,
    "label": "Voucher",
    "options": "document_type",
    "read_only": 1
@@ -99,13 +99,18 @@
   },
   {
    "fieldname": "remarks",
-   "fieldtype": "Small Text",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Remarks"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
   }
  ],
  "istable": 1,
- "modified": "2020-02-14 12:58:06.626861",
+ "modified": "2020-03-05 11:03:27.348187",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Customer Balance Comparison Details",

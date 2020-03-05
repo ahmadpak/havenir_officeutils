@@ -16,8 +16,9 @@
   "document_type",
   "column_break_9",
   "voucher",
+  "remarks",
   "column_break_11",
-  "remarks"
+  "comments"
  ],
  "fields": [
   {
@@ -34,7 +35,6 @@
   {
    "fieldname": "voucher",
    "fieldtype": "Dynamic Link",
-   "in_list_view": 1,
    "label": "Voucher",
    "options": "document_type",
    "read_only": 1
@@ -45,9 +45,10 @@
   },
   {
    "fieldname": "remarks",
-   "fieldtype": "Small Text",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Remarks"
+   "label": "Remarks",
+   "read_only": 1
   },
   {
    "fieldname": "debit",
@@ -102,10 +103,15 @@
   {
    "fieldname": "section_break_2",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
   }
  ],
  "istable": 1,
- "modified": "2020-02-14 00:56:21.052251",
+ "modified": "2020-03-05 10:59:35.522362",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Supplier Balance Comparison Details",

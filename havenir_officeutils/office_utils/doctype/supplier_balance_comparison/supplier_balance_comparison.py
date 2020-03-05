@@ -52,18 +52,20 @@ class SupplierBalanceComparison(Document):
             'debit',
             'credit',
             'voucher_type',
-            'voucher_no'
+            'voucher_no',
+            'remarks'
         ], order_by = 'posting_date asc', page_length = 2000000)
         return result
         
 
 def update_docs(self):
     for row in self.details:
-        doc = frappe.get_doc(row.document_type, row.voucher)
-        if row.matched == 1:
-            doc.db_set('reconciled', 'Matched')
-        else:
-            doc.db_set('reconciled', 'Differ')
-        doc.db_set('reconciled_by', frappe.session.user)
-        doc.save()
-        doc.submit()
+        if row.voucher:
+            doc = frappe.get_doc(row.document_type, row.voucher)
+            if row.matched == 1:
+                doc.db_set('reconciled', 'Matched')
+            else:
+                doc.db_set('reconciled', 'Differ')
+            doc.db_set('reconciled_by', frappe.session.user)
+            doc.save()
+            doc.submit()

@@ -126,7 +126,6 @@
    "fieldtype": "Table",
    "label": "Details",
    "options": "Supplier Balance Comparison Details",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -163,7 +162,7 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2020-02-13 18:17:42.507529",
+ "modified": "2020-03-05 10:50:13.361943",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Supplier Balance Comparison",
