@@ -38,8 +38,8 @@ frappe.ui.form.on("Customer Balance Comparison", {
                   document_type : result[i].voucher_type,
                   voucher : result[i].voucher_no,
                   remarks: result[i].remarks,
-                  matched : 0,
-                  differ : 1
+                  matched : 1,
+                  differ : 0
                 })
               }
             }
