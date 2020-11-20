@@ -9,6 +9,9 @@
   "rating",
   "no_response",
   "section_break_2",
+  "contact",
+  "contact_no",
+  "section_break_8",
   "last_paid_amount",
   "last_payment_date",
   "will_pay_with_next_purchase",
@@ -66,7 +69,6 @@
   {
    "fieldname": "last_paid_amount",
    "fieldtype": "Currency",
-   "in_list_view": 1,
    "label": "Last Paid Amount",
    "read_only": 1
   },
@@ -112,10 +114,28 @@
    "fieldname": "will_pay_with_next_purchase",
    "fieldtype": "Check",
    "label": "Will Pay With Next Purchase"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contact No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
   }
  ],
  "istable": 1,
- "modified": "2020-02-25 23:30:49.219903",
+ "modified": "2020-11-20 17:23:26.559627",
  "modified_by": "Administrator",
  "module": "Office Utils",
  "name": "Payment Recovery Calls Customer",

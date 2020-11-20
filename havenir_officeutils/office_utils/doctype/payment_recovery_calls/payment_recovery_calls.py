@@ -57,3 +57,22 @@ class PaymentRecoveryCalls(Document):
 def get_last_paid_amount(customer):
 	customer_doc = frappe.get_doc('Customer',customer)
 	return {'last_payment_date':customer_doc.last_payment_date,'last_payment_amount':customer_doc.last_payment_amount,'rating':customer_doc.rating}
+
+@frappe.whitelist()
+def set_phone(contact):
+    doc = frappe.get_doc('Contact', contact)
+
+    phone = []
+    if doc.phone:
+        return doc.phone
+    elif doc.mobile_no:
+        return doc.mobile_no
+    elif len(doc.phone_nos) == 0:
+        return False
+    else:
+        phone = [phone.phone for phone in doc.phone_nos]
+        if phone[0]:
+            return phone[0]
+        else:
+            return False
+    return False
