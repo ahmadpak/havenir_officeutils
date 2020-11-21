@@ -31,31 +31,14 @@ frappe.ui.form.on('Payment Recovery Calls Customer', {
 				}
 			})
 
-			frappe.db.get_list('Contact', {
-			filters : {
-				'status': 'Open'
-			}})
-			.then( r => {
-				for (let i in r) {
-					frappe.db.get_doc('Contact', r[i].name)
-					.then ( doc => {
-						if (doc.links) {
-							if (doc.links[0].link_doctype === 'Customer' && 
-								doc.links[0].link_name === customertmp.customer) {
-									frappe.model.set_value(cdt, cdn, 'contact', doc.name)
-									frappe.call('havenir_officeutils.office_utils.doctype.payment_recovery_calls.payment_recovery_calls.set_phone',
-									{contact: doc.name})
-									.then (r => {
-										if (r.message) {
-											frappe.model.set_value(cdt, cdn, 'contact_no', r.message)
-											frm.refresh_fields('call_details')
-										}
-									})
-								}
-							}
-						})
-					}
-			})
+			frappe.call('havenir_officeutils.office_utils.doctype.payment_recovery_calls.payment_recovery_calls.get_contract', 
+			{party: customertmp.customer})
+            .then (r => {
+                if (r.message) {
+                    frappe.model.set_value(cdt, cdn, 'contact', r.message)
+					frm.refresh_fields('call_details')
+                }
+            })
 		}
 	},
 

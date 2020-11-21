@@ -76,3 +76,15 @@ def set_phone(contact):
         else:
             return False
     return False
+
+@frappe.whitelist()
+def get_contract(party):
+    contract = frappe.db.get_all('Dynamic Link', {
+        'link_doctype': 'Customer',
+        'link_name': party,
+        'parenttype': 'Contact'
+    }, 'parent')
+    if contract:
+        return contract[0].parent
+    else:
+        return False
